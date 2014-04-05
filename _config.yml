@@ -1,0 +1,17 @@
+#
+# Descriptive metadata
+#
+
+title: nxtv
+description: Broilerplate based website
+keywords: Broiler, Chicken, Hen, Jekyll
+language: en
+author: imm studios, z.s.
+
+#
+# Build options
+#
+
+exclude: ["_doc", "LICENSE", "README.md"]
+markdown: redcarpet
+pygments: true

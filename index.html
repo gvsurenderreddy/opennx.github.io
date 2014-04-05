@@ -1,59 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    
-    <title>imm studios - creative creatures</title>
+---
+layout: default
+---
 
-    <meta name="description" content="Prague based motion imaging professionals group.">
-    <meta name="keywodse" content="Broadcast, post, SMPTE, EBU, open source, developer, artist, avid">
-    <meta name="viewport" content="width=device-width">
+<section id="live">
+    <div class="row">
+        {% include player.html %}
+    </div>
+</section>
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/cyborg/bootstrap.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-
-<body>
-    <div class="container">
-        <div class="row-fluid">
-
-            <header>
-                <h1>imm studios</h1>
-                <p class="lead">post-production and broadcast freaks</p>
-            </header>
-
-            <section>
-                <div class="block pull-center">
-                    <p>
-                        Estabilished in 2004, imm studios is a professional organisation, founder and operator of 
-                        <a href="http://opennx.eu">opennx</a> initiative, 
-                        <a href="http://nxtv.cz">nxtv</a> channel and 
-                        Prague based postproduction facility, which is available for non-commercial and interesting projects.
-                    </p>
-                </div>
-            </section>
-
-            <aside>
-                <div class="pull-center" style="text-align:center;">
-                    <a class="btn btn-default btn-sm" href="mailto:produkce@imm.cz"> <i class="fa fa-envelope-o fa-fw"></i> e-mail</a>
-                    <a class="btn btn-default btn-sm" href="https://www.facebook.com/immstudios"> <i class="fa fa-facebook fa-fw"></i> Facebook</a>
-                    <a class="btn btn-default btn-sm" href="https://www.github.com/OpenNX"> <i class="fa fa-github fa-fw"></i> Github</a>
-                </div>
-            </aside>
-
+<section id="program">
+    <div class="row">
+        <div class="container">
+            {% include schedule.html %}
         </div>
     </div>
+</section>
 
-    <footer>
-        <p class="small">&copy; 2004 - 2014, imm studios, z.s.</p>
-    </footer>
+<section id="about">
+    <div class="row">
+        <div class="container">
+            {% include about.html %}
+        </div>
+    </div>
+</section>
 
-
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="js/analytics.js"></script>
-
-</body>
-</html>
+<section id="contact">
+    <div class="row">
+        <div class="container">
+           {% include contact.html %}
+        </div>
+    </div>
+</section>
