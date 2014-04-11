@@ -180,9 +180,18 @@ a:focus {
     width: 960px;
     height :540px;
     padding : 0;
-    background-color: transparent;
+    background-color: black;
 }
 
+
+#infoLabel {
+    margin: 0 auto;
+    background-color: rgba(0,0,0,.7);
+    color: #ccc;
+    padding: 10px;
+    margin-top:20px;
+    width : 960px;
+}
 
 
 
