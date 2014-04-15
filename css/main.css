@@ -6,15 +6,15 @@ body {
 
 
 body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #ccc;
 
+    background-color: #000;
     background: url(../img/bkg.jpg) no-repeat bottom center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
 }
 
 
@@ -28,22 +28,35 @@ h6 {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
-    letter-spacing: 1px;
 }
+
+
+
+.black {
+    padding: 10px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    background-color: rgba(0,0,0,.7);
+    color: #ccc;
+}
+
 
 p {
-    margin: 0 0 25px;
-    font-size: 18px;
-    line-height: 1.5;
+    margin: 0 0 20px;
+    line-height: 1.6;
 }
 
-@media(min-width:767px) {
-    p {
-        margin: 0 0 35px;
-        font-size: 20px;
-        line-height: 1.6;
-    }
+blockquote {
+    font-size: 14px;
+    font-style: italic;
 }
+
+code {
+    color : #ddd;
+    background-color: rgba(0,0,0,.7);
+}
+
+
 
 a {
     color: #28c3ab;
@@ -59,9 +72,13 @@ a:focus {
 }
 
 
-.light {
-    font-weight: 400;
-}
+
+
+
+
+
+
+
 
 .navbar {
     margin-bottom: 0;
@@ -70,9 +87,6 @@ a:focus {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: #000;
 }
-
-
-
 
 
 .navbar-brand {
@@ -149,7 +163,7 @@ a:focus {
 @media(min-width:767px) {
 
     .row {
-        padding-top: 150px;
+        padding-top: 130px;
     }
 
     #live, #program, #about, #contact {
@@ -168,21 +182,11 @@ a:focus {
     background-color: black;
 }
 
-
 #infoLabel {
     margin: 0 auto;
-    background-color: rgba(0,0,0,.7);
-    color: #ccc;
-    padding: 10px;
-    margin-top:20px;
     width : 960px;
+    margin-top:20px;
 }
-
-
-
-
-
-
 
 
 
@@ -210,12 +214,6 @@ a:focus {
     color: #FA8434;
     background-color: transparent;
 }
-
-.btn-huge {
-    padding: 25px;
-    font-size: 26px;
-}
-
 
 
 
