@@ -7,9 +7,14 @@ body {
 
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #ccc;
-    webkit-tap-highlight-color: rgba(255,255,255,.2);
     background-color: #000;
+    color: #ccc;
+
+    background: url(../img/bkg.jpg) no-repeat bottom center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 
@@ -137,26 +142,6 @@ a:focus {
     padding : 50px 0;
     text-align: center;
     color: #ccc;
-    
-    background-color: #000;
-
-}
-
-
-#live {
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-#about {
-    background: url(../img/about-bg.jpg) no-repeat bottom center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
 }
 
 
