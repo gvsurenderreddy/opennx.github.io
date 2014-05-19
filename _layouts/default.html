@@ -28,7 +28,6 @@
 
     <script type="text/javascript" src="/js/grayscale.js"></script>
     <script type="text/javascript" src="/js/swfobject.js"></script>
-    <script type="text/javascript" src="/js/analytics.js"></script>
 
     <script type="text/javascript">
         var flashvars  = {src: 'rtmp%3A//streamuj.tyzmr.de/nxtv/nx_high', autostart: 'true', themeColor: '0395d3', mode: 'overlay', scaleMode: 'native', frameColor: '000000', fontColor: '333333', link: '',embed: ''};
@@ -37,6 +36,18 @@
 
         swfobject.embedSWF('swf/AkamaiFlashPlayer.swf', 'videoPlayer', '966', '546', '9.0.0', 'swf/expressInstall.swf', flashvars, params, attributes);
     </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51103561-1', 'nxtv.cz');
+      ga('send', 'pageview');
+
+    </script>
+
 
 </body>
 
