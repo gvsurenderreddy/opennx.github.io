@@ -2,11 +2,13 @@
 # Descriptive metadata
 #
 
+url: nxtv.cz
 title: nxtv
 description: nezávislá televizní stanice
 keywords: open source, broadcast
 language: cz
 author: imm studios, z.s.
+analytics: UA-51103561-1
 
 #
 # Build options
