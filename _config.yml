@@ -2,12 +2,15 @@
 # Descriptive metadata
 #
 
-url: nxtv.cz
-title: nxtv
-description: nezávislá televizní stanice
-keywords: open source, broadcast
-language: cz
+#url: http://nxtv.cz
+url: http://localhost:4000
+title: nxtv.cz
+description: Open source powered TV channel
+keywords: Broadcast, Creative commons, Open source, Independent, Television
+language: en
 author: imm studios, z.s.
+copyright: Page created by imm studios under Creative Commons - Attribution - Share alike license (CC-BY-SA)  3.0
+
 analytics: UA-51103561-1
 
 #

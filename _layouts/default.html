@@ -1,43 +1,49 @@
 <!DOCTYPE html>
-<html lang="{{ site.language }}">
-<head>
+<html lang="{{ site.language }}" xmlns="http://www.w3.org/1999/xhtml">
+      
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8" />
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
 
-    <title>{{ site.title }}</title>
+    <title>{{ page.title }} - {{ site.title }}</title>
     
-    <meta name="description" content="{{ site.description }}"/>
-    <meta name="keywords" content="{{ site.keywords }}"/>
-    <meta name="author" content="{{ site.author }}"/>
+    <meta name="application-name" content="{{ site.title }}" />
+    <meta name="description" content="{{ site.description }}" />
+    <meta name="keywords" content="{{ site.keywords }}" />
+    <meta name="author" content="{{ site.author }}" />
+    <meta name="copyright" content="{{ site.copyright }}" />
+    
+    <meta property="og:site_name" content="{{ site.title }}"/>
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:image" content="{{ site.url }}/static/img/social.png" />
+    <meta property="og:description" content="{{ site.description }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="cs_CZ" /> 
 
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.url }}/favicon.ico">
+
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700"/>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/main.css"/>
+
+    <link rel="stylesheet" href="{{ site.url }}/static/css/main.css"/>
+
     {% include analytics.html %}
 </head>
 
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-
-    {% include navbar.html %}
-
-    {{ content }}
+<body>
+<div id="wrapper">
+{{ content }}
+</div>
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="/js/grayscale.js"></script>
-    <script type="text/javascript" src="/js/swfobject.js"></script>
-
-    <script type="text/javascript">
-        var flashvars  = {src: 'rtmp%3A//streamuj.tyzmr.de/nxtv/nx_high', autostart: 'true', themeColor: '0395d3', mode: 'overlay', scaleMode: 'native', frameColor: '000000', fontColor: '333333', link: '',embed: ''};
-        var params     = {allowFullScreen: 'true'};
-        var attributes = {id: 'nxtvPlayer', name: 'nxtvPlayer'};
-
-        swfobject.embedSWF('swf/AkamaiFlashPlayer.swf', 'videoPlayer', '966', '546', '9.0.0', 'swf/expressInstall.swf', flashvars, params, attributes);
-    </script>
+    {% for js in page.js %}<script src="{{ site.url }}/static/js/{{ js }}.js"></script>
+    {% endfor %}
 </body>
-
 </html>

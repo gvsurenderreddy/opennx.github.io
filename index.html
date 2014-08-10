@@ -1,33 +1,16 @@
 ---
 layout: default
+title: Live
+js: 
+- swfobject
+- dash.all
+- nx_scroll
+- nx_video
 ---
 
-<section id="live">
-    <div class="row">
-        {% include player.html %}
-    </div>
-</section>
+    <h1>nxtv <small>Open source broadcast experiment</small></h1> 
 
-<section id="program">
-    <div class="row">
-        <div class="container">
-            {% include schedule.html %}
-        </div>
+    <div id="video_container">
+        <video id="dash_video_player" poster="/static/img/loading.gif">>
+        </video>
     </div>
-</section>
-
-<section id="about">
-    <div class="row">
-        <div class="container">
-            {% include about.html %}
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="row">
-        <div class="container">
-           {% include contact.html %}
-        </div>
-    </div>
-</section>
