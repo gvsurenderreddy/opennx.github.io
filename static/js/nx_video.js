@@ -131,6 +131,14 @@ $( document ).ready(function() {
     }); // mute video
 
 
+    $("#btn_fullscreen").click(function(){
+        var element = document.getElementById("dash_video_player");       
+        if (element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullScreen) {
+                element.webkitRequestFullScreen();
+        }  
+    }); //full screen
 
 
 }); // document ready
