@@ -4,13 +4,35 @@ title: Live
 js: 
 - swfobject
 - dash.all
-- nx_scroll
 - nx_video
 ---
 
-    <h1>nxtv <small>Open source broadcast experiment</small></h1> 
+<img id="background" src="/static/img/bkg.jpg"></img>
 
-    <div id="video_container">
-        <video id="dash_video_player" poster="/static/img/loading.gif">>
-        </video>
+<div id="wrapper">
+
+    <div class="top left"></div>
+    <div class="top mid"></div>
+    <div class="top right"></div>
+
+    <div class="main left"></div>
+    <div class="main mid" id="video_container">
+        <video id="dash_video_player" poster="/static/img/loading.gif"></video>
     </div>
+    <div class="main right"></div>
+
+
+    <div class="bottom left"></div>
+    <div class="bottom mid">
+        <div id="toolbar">
+            <button id="btn_mute"><i class="fa fa-volume-up"></i></button>
+            <span style="float:right">
+                <button id="btn_comment"><i class="fa fa-comment-o"></i></button>
+                <button id="btn_thumb_up"><i class="fa fa-thumbs-o-up"></i></button>
+                <button id="btn_thumb_down"><i class="fa fa-thumbs-o-down"></i></button>
+            </span>
+        </div>
+    </div>
+    <div class="bottom right"></div>
+
+</div>
