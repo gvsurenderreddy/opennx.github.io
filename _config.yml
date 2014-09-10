@@ -2,7 +2,6 @@
 # Descriptive metadata
 #
 
-#url: http://nxtv.cz
 url: http://nxtv.cz
 title: nxtv.cz
 description: Open source powered TV channel
@@ -18,5 +17,3 @@ analytics: UA-51103561-1
 #
 
 exclude: ["_doc", "LICENSE", "README.md"]
-markdown: redcarpet
-pygments: true

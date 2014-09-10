@@ -27,61 +27,39 @@ function get_flash(movieName){
 
 function start_video(dash_url, rtmp_url) {
 
-    if (!!!(window.MediaSource || window.WebKitMediaSource)) {
+    var flashvars  = {
+        src: rtmp_url, 
+        autostart: 'true', 
+        themeColor: '0395d3', 
+        mode: 'overlay', 
+        scaleMode: 'native', 
+        frameColor: '000000', 
+        fontColor: '333333', 
+        link: '',
+        embed: ''
+        };
+    
+    var params     = {
+        allowFullScreen: 'true'
+        };
 
-        $("#dash_video_player").remove();
-        $("#video_container").append("<div id='flash_video_player'></div>")
+    var attributes = {
+        id: 'nx_player', 
+        name: 'nx_player'
+        };
 
-        var flashvars  = {
-            file: rtmp_url, 
-            autoplay: true, 
-            mode: 'overlay', 
-            poster: "/static/img/loading.gif",
-            link: '',
-            embed: ''
-            };
-        
-        var params     = {
-            allowFullScreen: 'true',
-            bgcolor:'#000000',
-            wmode:'transparent',
-            allowScriptAccess:'always',
-            };
+    swfobject.embedSWF(
+        '/static/swf/AkamaiFlashPlayer.swf', 
+        'flash_video_player', 
+        '966', '546', 
+        '9.0.0', 
+        '/static/swf/expressInstall.swf', 
+        flashvars, 
+        params, 
+        attributes
+        );
 
 
-
-        var attributes = {
-            id: 'nx_player', 
-            name: 'nx_player'
-            };
-
-        swfobject.embedSWF(
-            '/static/swf/flashmediaelement.swf', 
-            'flash_video_player', 
-            '960', '540', 
-            '9.0.0', 
-            '/static/swf/expressInstall.swf', 
-            flashvars, 
-            params, 
-            attributes
-            );
-
-        playback_mode = "flash";
-
-    } else { // END Flash fallback. START DASH
-
-        video   = document.querySelector("#dash_video_player");
-        context = new Dash.di.DashContext();
-        player  = new MediaPlayer(context);
-
-        player.startup();
-        player.attachView(video);
-        player.setAutoPlay(true);
-        player.attachSource(dash_url); 
-
-        playback_mode = "dash";
-
-    } // end DASH
 } // end function start_video()
 
 
@@ -92,18 +70,6 @@ $( document ).ready(function() {
         'http://streamuj.tyzmr.de:42666/dash/nx_high.mpd',
         'rtmp://streamuj.tyzmr.de/nxtv/nx_high'
         );
-
-    $("#dash_video_player").on('play', function(){
-
-        $("#background").replaceWith('<canvas id="background" width="32" height="18">New heading</h2>');
-        
-        var canvas = document.getElementById('background');
-        var cw = Math.floor(canvas.width);
-        var ch = Math.floor(canvas.height);
-        var bkg_context = canvas.getContext('2d');
-        draw(this, bkg_context, cw, ch);
-
-    });
 
     $("#btn_mute").click(function() {
 
