@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Live
+title: Radio
 js: 
 - pushstream
 - boot
@@ -11,7 +11,9 @@ js:
 <header id="header" class="text-center">
 
     <div id="player-wrapper">
-        <audio id="rplayer" controls autoplay>
+        <div id="rplayer">
+        </div>
+        <audio id="player" controls autoplay>
             <source src="http://origin.nxtv.cz/radio/vorbis" type="audio/ogg">
             <source src="http://origin.nxtv.cz/radio/mp3high" type="audio/mpeg">
         </audio> 
@@ -47,7 +49,7 @@ js:
             </div>
 
             <div role="tabpanel" class="tab-pane fade" id="about">
-                {% include about.html %}
+                {% include about_radio.html %}
             </div>
 
         </div>
@@ -63,13 +65,3 @@ js:
         </ul>
     </nav>
 </header>
-
-<!-- Footer -->
-<!--
-<footer id="footer">
-    <p>This site is non-commercial, solely for education and understanding of the technological issues involved. 
-    <br>All material broadcasted is licensed as creative commons.
-    </p>
-    <p class="status"></p>  
-</footer>
--->
