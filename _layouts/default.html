@@ -1,34 +1,6 @@
-<!DOCTYPE HTML>
-<html lang="{{ site.language }}" xmlns="http://www.w3.org/1999/xhtml">
-
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>{{ site.title }}</title>
-
-    <meta name="application-name" content="{{ site.title }}" />
-    <meta name="description" content="{{ site.description }}" />
-    <meta name="keywords" content="{{ site.keywords }}" />
-    <meta name="author" content="{{ site.author }}" />
-    <meta name="copyright" content="{{ site.copyright }}" />
-
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"> 
-
-    <!--[if lte IE 8]><script src="/static/css/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/static/css/bebasneue_regular_czech/stylesheet.css" />
-    <link rel="stylesheet" href="/static/css/timeline.css" />
-    <link rel="stylesheet" href="/static/css/style.css" />
-
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-{% for js in page.js %}    <script type="text/javascript" src="/static/js/{{ js }}.js"></script>
-{% endfor %}
-
-{% include analytics.html %}
-
-</head>
-
-<body class="loading">
+---
+layout: base
+---
     <div id="wrapper">
         <div id="bg"></div>
         <div id="overlay"></div>
@@ -38,5 +10,3 @@
         
         </div>
     </div>
-</body>
-</html>

@@ -2,18 +2,54 @@
 # Descriptive metadata
 #
 
-url: http://nxtv.cz
-title: nxtv.cz
-description: Nekomerční televizní stanice založená na otevřených technologiích a svobodném obsahu
-keywords: Broadcast, Creative commons, Open source, Independent, Television, televize, nezávislý, televizní vysílání, rock, indie, alternative, alternativní
-language: cz
-author: imm studios, z.s.
-copyright: Tato stránka je licencována pod Creative Commons - Attribution - Share alike license (CC-BY-SA)  3.0
+# url without trailing slash
 
-analytics: UA-51103561-1
+url:            http://nxtv.cz
+
+name:           NXTV
+title:          NXTV
+description:    Nekomerční televizní stanice založená na otevřených technologiích a svobodném obsahu
+keywords:       Broadcast, Creative commons, Open source, Independent, Television, televize, nezávislý, televizní vysílání, rock, indie, alternative, alternativní
+language:       cs
+analytics:      UA-51103561-1
+
+contact:
+    name:       NXTV
+    email:      nx@imm.cz
+    facebook:   https://www.facebook.com/nxtv
+
+author:
+    name:       imm studios, z.s.
+    email:      produkce@imm.cz
+    url:        http://imm.cz
+    facebook:   https://www.facebook.com/immstudios
+    twitter:    https://twitter.com/immstudios
 
 #
 # Build options
 #
 
-exclude: ["_doc", "LICENSE", "README.md"]
+
+# Additional CSS
+css:
+     - //maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css
+     - //maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css
+     - /static/css/bebasneue_regular_czech/stylesheet.css
+     - /static/css/timeline.css
+     - /static/css/style.css
+
+js:
+    - //ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
+    - //maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js
+
+
+include:        ["robots.txt"]
+exclude:        ["_doc", "LICENSE", "README.md"]
+markdown:       redcarpet
+sass:
+    sass_dir:   _sass
+    style:      compressed
+
+
+
+
