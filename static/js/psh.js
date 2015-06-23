@@ -70,28 +70,7 @@ _connect('nxtv');
 
 $(document).ready(function()
 {
-	$('.expand').hide();
-	
-	$("#messaging").on('click', '.expand', function(e) {
-		e.preventDefault();
-		var btn = $(this);
-		var chh = $("#messaging .description").height()+20;
-		btn.addClass('return').removeClass('expand');
-		$("#messaging .description-wrap").animate({
-			height: chh+"px"
-		}, 500, function() {
-			btn.find('span').addClass('glyphicon-chevron-up').removeClass('glyphicon-chevron-down');
-		});
-	}).on('click', '.return', function(e) {
-		e.preventDefault();
-		var btn = $(this);
-		btn.addClass('expand').removeClass('return');
-		$("#messaging .description-wrap").animate({
-			height: "90px"
-		}, 500, function() {
-			btn.find('span').addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up')
-		});
-	});
+
 
 
 });

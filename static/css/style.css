@@ -373,7 +373,6 @@ Messages
 }
 
 #messaging .description-wrap {
-    height: 90px;
     overflow: hidden;
 }
 
@@ -383,14 +382,6 @@ Messages
     padding: 5px;
 }
 
-a.expand, a.return {
-    max-width: 600px;
-    margin: 0 auto;
-    padding-top: 5px;
-    display: block;
-    outline:none;
-    background: url('/static/img/opaque.60.1p.png');
-}
 
 
 
