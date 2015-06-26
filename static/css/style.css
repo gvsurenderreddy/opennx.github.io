@@ -383,6 +383,18 @@ Messages
 }
 
 
+#messaging .attribution {
+    margin-top: 30px;
+    color: #606060;
+    font-size: 14px;
+}
+
+#messaging .attribution a{
+    color: #606060;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
 
 
 /* TV schedule */

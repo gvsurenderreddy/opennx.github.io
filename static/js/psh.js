@@ -5,14 +5,10 @@ var messagePub = function(data){
 	fillMeta('.title', data.title );
 	fillMeta('.subtitle', data.subtitle );
 	fillMeta('.description', nl2br(data.description));
+    fillMeta('.attribution', mkattrib(data));
 
 	//console.log($('.description').height());
 
-	if($('.description').height()>60){
-		$('.expand').show();
-	}else{
-		$('.expand').hide();
-	}
 };
 
 
@@ -29,6 +25,40 @@ var nl2br = function(str){
 	var breakTag = '<br>'; 
 	return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
 }
+
+
+var mkattrib = function(data){
+    var author = "";
+    var lic = "";
+    if (data.url) {
+        author = "<a href='" + data.url +  "' target='_blank'>" + data.author + "</a>";
+    } else {
+        author = data.author;
+    }
+
+    console.log(data);
+    var lic_deed;
+
+    lic = data.rights;
+    if (lic == "CC 0"){
+        lic_deed = "https://creativecommons.org/publicdomain/zero/1.0/";
+
+    } else if (lic.startsWith("CC BY") ) {
+        x = lic.split(" ");
+        lic_deed = "https://creativecommons.org/licenses/" + x[1] + "/" + x[2] + "/";
+    }  
+    
+
+    if (lic_deed) {
+        lic = "<a href='" + lic_deed.toLowerCase() +  "' target='_blank'>" + data.rights + "</a>";
+    }
+
+
+    var result = data.title + " by " + author + " is licensed under " + lic;
+    return result
+
+}
+
 
 
 var _statuschanged = function(state) {
