@@ -71,5 +71,6 @@ $(document).ready(function() {
 
     TVInit();
     tvSchedule();
+    $.cookieBar({ element : "#wrapper"});
 
 });
