@@ -98,8 +98,8 @@ var _connect = function(channel) {
 PushStream.LOG_LEVEL = 'error';
 
 var pushstream = new PushStream({
-  host: 'streamuj.tyzmr.de',
-  port: 42666,
+  host: 'notify.imm.cz',
+  port: 80,
   modes: "websocket",
 
 });
