@@ -58,7 +58,7 @@ $(document).ready(function() {
         '  <param name="allowscriptaccess" value="always"> '+
         '  <param name="swlivevonnect" value="true" /> '+
         '  <param name="cachebusting" value="false"> '+
-        '  <param name="flashvars" value="skin=/static/swf/'+playerSwf.skin+'.swf&streamname=nxtv&stream=rtmp://streamuj.tyzmr.de/streams/&live=1&autoplay=1"/> '+
+        '  <param name="flashvars" value="skin=/static/swf/'+playerSwf.skin+'.swf&streamname=nxtv&stream=rtmp://edge1.immstudios.org/t/&live=1&autoplay=1"/> '+
         '  <a href="http://www.adobe.com/go/flashplayer/">Download it from Adobe.</a> '+
         '  <a href="http://gokercebeci.com/dev/f4player" title="flv player">flv player</a> '+
         ' </object>');
