@@ -8,22 +8,10 @@ function start_stream(stream_url, target){
                 player.play();
         });
      } else {
-        // If HLS is not supported, play fallback video instead.
-        player.src = fallback_video;
-        player.load();
 
-        if (typeof player.loop == 'boolean') { 
-            // loop supported
-            player.loop = true;
+        // TODO: Fallback
 
-        } else { 
-            // loop property not supported
-            player.addEventListener('ended', function () {
-                this.currentTime = 0;
-                this.play();
-            }, false);
-        }
-        player.play();
+
      } // HLS is not supported
 } // function start_stream()
 
