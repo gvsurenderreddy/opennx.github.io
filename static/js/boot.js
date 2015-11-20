@@ -1,76 +1,61 @@
-var tvSchedule = function(){
-    var dataPath = 'http://data.nxtv.cz/public/nx/schedule/nx.schedule.html';
+function start_stream(stream_url, target){
+    var player = document.getElementById(target);
+    if(Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(stream_url);
+        hls.attachVideo(player);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                player.play();
+        });
+     } else {
+        // If HLS is not supported, play fallback video instead.
+        player.src = fallback_video;
+        player.load();
 
+        if (typeof player.loop == 'boolean') { 
+            // loop supported
+            player.loop = true;
+
+        } else { 
+            // loop property not supported
+            player.addEventListener('ended', function () {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+        }
+        player.play();
+     } // HLS is not supported
+} // function start_stream()
+
+
+function update_schedule(data_path, target){
     $.ajax({
         type: "GET",
-        url: dataPath,
+        url: data_path,
         dataType: 'html',
         crossDomain: true,
         async: true,
         cache: false,
         error: function(jqXHR, textStatus, errorThrown){
-            //console.log(jqXHR, textStatus, errorThrown);
+            console.log(jqXHR, textStatus, errorThrown);
         },
         success: function(r){      
-            $('#schedule').html(r);   
-
+            $(target).html(r);   
             setTimeout( function(){
-                tvSchedule();
+                update_schedule();
             }, 60000);
-
-            //console.log(r);
         }
     });
 }
 
 
 $(document).ready(function() {
+    var schedule_target = "#schedule";
+    var schedule_path   = "http://data.nxtv.cz/public/nx/schedule/nx.schedule.html";
+    var stream_path     = "http://tranquility.immstudios.org/nxtv.m3u8";    
 
     $('body').removeClass('loading');
-
-    var vConf = [
-        [512,288],
-        [640,360],
-        [960,540],
-        [1024,576],
-        [1280,720]
-    ];
-
-    var TV = {
-        playback: false,
-        playPause : $('.playPause')
-    };
-
-    var TVInit = function(){
-
-        var playerSwf = {
-            player: 'nxtv',
-            skin: 'nxtv_skin'
-        }
-
-        var f4v = $('<object id="f4Player" width="960" height="540" type="application/x-shockwave-flash" data="/static/swf/'+playerSwf.player+'.swf?v1.3.5">' +
-        '  <param name="movie" value="/static/sff/'+playerSwf.player+'.swf?v1.3.5" /> '+
-        '  <param name="quality" value="high" /> '+
-        '  <param name="menu" value="false" /> '+
-        '  <param name="scale" value="noscale" /> '+
-        '  <param name="allowfullscreen" value="true"> '+
-        '  <param name="wmode" value="opaque">'+
-        '  <param name="allowscriptaccess" value="always"> '+
-        '  <param name="swlivevonnect" value="true" /> '+
-        '  <param name="cachebusting" value="false"> '+
-        '  <param name="flashvars" value="skin=/static/swf/'+playerSwf.skin+'.swf&streamname=nxtv&stream=rtmp://potato.immstudios.org/t/&live=1&autoplay=1"/> '+
-        '  <a href="http://www.adobe.com/go/flashplayer/">Download it from Adobe.</a> '+
-        '  <a href="http://gokercebeci.com/dev/f4player" title="flv player">flv player</a> '+
-        ' </object>');
-
-
-        $('#nplayer').html(f4v);
-
-    }
-
-
-    TVInit();
-    tvSchedule();
-    $.cookieBar({ element : "#wrapper"});
-
+    
+    update_schedule(schedule_path, schedule_target);
+    start_stream(stream_path, "nplayer");
 });
