@@ -1,19 +1,22 @@
-function start_stream(stream_url, target){
-    var player = document.getElementById(target);
-    if(Hls.isSupported()) {
-        var hls = new Hls();
-        hls.loadSource(stream_url);
-        hls.attachVideo(player);
-        hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                player.play();
-        });
-     } else {
+function start_stream(){
 
-        // TODO: Fallback
+    var player = $('#player').julia({
+        autoplay: true,
+        muted: false,
+        responsive: true,
+        debug: false,
+        live: true,
+        dimensions: [
+            [1280,720],
+            [960,540],
+            [640,360],
+        ],
+        i18n: {
+            liveText: '',
+        }
+    });
 
-
-     } // HLS is not supported
-} // function start_stream()
+}
 
 
 function update_schedule(data_path, target){
@@ -37,13 +40,20 @@ function update_schedule(data_path, target){
 }
 
 
+
+function update_events(){
+
+}
+
+
+
+
 $(document).ready(function() {
     var schedule_target = "#schedule";
     var schedule_path   = "http://data.nxtv.cz/public/nx/schedule/nx.schedule.html";
-    var stream_path     = "http://tranquility.immstudios.org/nxtv.m3u8";    
 
     $('body').removeClass('loading');
     
     update_schedule(schedule_path, schedule_target);
-    start_stream(stream_path, "nplayer");
+    start_stream();
 });

@@ -1,18 +1,16 @@
 ---
-layout: default
+layout: base 
 title: Live
 js: 
-- /static/js/hls.min.js
+- /static/js/julia-player.js
 - /static/js/boot.js
 ---
 
+<div id="player-wrapper">
+    <video id="player" src="{% site.stream_url %}">
+</div>
 
-<header id="header" class="text-center">
-
-    <div id="player-wrapper">
-         <video id="nplayer" controls>
-    </div>      
-    
+<div id="tabs-container">
     <div id="tabas">    
         <!-- Nav tabs -->
         <ul class="nav nav-tabs nav-justified" role="tablist">
@@ -24,18 +22,7 @@ js:
         <!-- Tab panes -->
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active fade in" id="now">
-                <div id="messaging">
-                    <div class="title-wrap">
-                        <span class="title"></span> <span class="subtitle"></span>
-                    </div>
-                    <div class="description-wrap">
-                        <div class="description">
-                        </div>
-                        <div class="attribution">
-                        </div>
-                    </div>
-
-                 </div>
+                {% include now_playing.html %}
             </div>
 
             <div role="tabpanel" class="tab-pane fade" id="schedule">
@@ -46,16 +33,7 @@ js:
                 {% include about.html %}
             </div>
 
-        </div>
-    </div>  
+        </div> <!--end tab content -- >
+    </div> <!-- end tabs -->
+</div> <!-- end tabs-container -->
 
-    <nav>
-        <ul>
-            <!-- B-SOCIAL -->
-            <li><a href="https://facebook.com/nxtvcz" target="_blank" class="fa fa-facebook fa-fw"><span class="sr-only">Facebook</span></a></li>
-            <li><a href="https://twitter.com/nxtvcz" target="_blank" class="fa fa-twitter fa-fw"><span class="sr-only">Twitter</span></a></li>
-            <li><a href="https://github.com/opennx" target="_blank" class="fa fa-github fa-fw"><span class="sr-only">Github</span></a></li>
-            <!-- META -->
-        </ul>
-    </nav>
-</header>
