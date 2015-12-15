@@ -1127,7 +1127,7 @@ r=0;r<o.length;r++)o[r].cc+=u;if(s)e.updateFragPTS(i,s.sn,s.startPTS,s.endPTS);e
                 {
                     e.preventDefault();
                     e.stopPropagation();
-                    //_control('pause');
+                    _control('pause');
                 });
 
                 // Fullscreen toolbar behavior bindings
