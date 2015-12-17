@@ -6,6 +6,7 @@ function start_stream(){
         responsive: true,
         debug: false,
         live: true,
+        pauseOnClick : true,
         dimensions: [
             [1280,720],
             [960,540],
