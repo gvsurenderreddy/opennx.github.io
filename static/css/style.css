@@ -3,9 +3,12 @@ body {
     background-color: #121212;
 }
 
-body.loading * {
+#main {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
 }
-
 
 #player-wrapper {
     text-align:center;
@@ -16,6 +19,11 @@ body.loading * {
     max-width: 800px;
     margin: 30px auto;
     text-align: center;
+}
+
+footer {
+    text-align: center;
+    height : 60px;
 }
 
 
@@ -124,5 +132,4 @@ list-style-type: none;
     text-align: center;
     margin-top: 20px;
     font-size: 12px;
-
 }
