@@ -25,8 +25,7 @@ author:
     twitter:    https://twitter.com/immstudios
     github:     https://github.com/immstudios
 
-#stream_url:     http://tranquility.immstudios.org/nxtv.m3u8
-stream_url:     http://live.nxtv.cz/748148737/_definst_/high/playlist.m3u8
+stream_url:     http://tranquility.immstudios.org/nxtv.m3u8
 
 #
 # Build options
